@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log("player");
     }
 
     // Update is called once per frame
