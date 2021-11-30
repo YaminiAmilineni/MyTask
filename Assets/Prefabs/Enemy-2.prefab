@@ -136,5 +136,7 @@ MonoBehaviour:
   canShoot: 0
   canRotate: 1
   bound_X: -11
-  attack_Point: {fileID: 0}
-  enemy_bullet_: {fileID: 0}
+  attack_Point: {fileID: 7291030151476759344, guid: 622270f549a085f4bb98a4a1d4fdf6fe,
+    type: 3}
+  enemy_bullet: {fileID: 4680810956090923231, guid: 902f5eafa5b5b4044a535e2b000bcd8c,
+    type: 3}
