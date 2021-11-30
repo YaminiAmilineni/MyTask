@@ -14,7 +14,7 @@ public class EnemyScript : MonoBehaviour
 
     public float bound_X = -11f;
     public Transform attack_Point;
-    public GameObject enemy_bullet;
+    public GameObject Enemy_bullet;
 
     private Animator anim;
 
@@ -34,6 +34,11 @@ public class EnemyScript : MonoBehaviour
                 rotate_Speed = Random.Range(rotate_Speed, rotate_Speed + 20f);
                 rotate_Speed *= -1f;
             }
+        }
+
+        if (canShoot)
+        {
+            Invoke("StartShooting", Random.Range(1f, 3f));
         }
     }
 
@@ -63,6 +68,18 @@ public class EnemyScript : MonoBehaviour
         {
             transform.Rotate(new Vector3(0f, 0f, rotate_Speed * Time.deltaTime), Space.World);
 ;        }
+    }
+
+    void StartShooting()
+    {
+        GameObject bullet = Instantiate(Enemy_bullet, attack_Point.position, Quaternion.identity);
+        bullet.GetComponent<BulletScript>().is_EnemyBullet = true;
+
+
+        if (canShoot)
+        {
+            Invoke("StartShooting", Random.Range(1f, 3f));
+        }
     }
 
 
