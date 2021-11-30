@@ -14,7 +14,7 @@ public class EnemyScript : MonoBehaviour
 
     public float bound_X = -11f;
     public Transform attack_Point;
-    public GameObject enemy_bullet_;
+    public GameObject enemy_bullet;
 
     private Animator anim;
 
