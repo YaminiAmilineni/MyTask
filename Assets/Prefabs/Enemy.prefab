@@ -42,9 +42,10 @@ GameObject:
   - component: {fileID: 1516162478223664396}
   - component: {fileID: 8684379182660920781}
   - component: {fileID: 188949686}
+  - component: {fileID: 2080217098}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +130,8 @@ MonoBehaviour:
   canShoot: 1
   canRotate: 0
   bound_X: -11
-  attack_Point: {fileID: 8917940148553101538}
+  attack_Point: {fileID: 1723995221018438099, guid: ef355d813fd64a94d9c44219590c67e9,
+    type: 3}
   Enemy_bullet: {fileID: 4680810956090923231, guid: 902f5eafa5b5b4044a535e2b000bcd8c,
     type: 3}
 --- !u!95 &188949686
@@ -151,3 +153,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &2080217098
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516162478223664398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.43, y: 7.7}
+    newSize: {x: 5.43, y: 7.7}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.43, y: 7.7}
+  m_EdgeRadius: 0
