@@ -195,5 +195,7 @@ MonoBehaviour:
   speed: 5
   min_Y: -4.2
   max_Y: 4.2
-  player_Bullet: {fileID: 0}
+  Player_Bullet: {fileID: 1723995221018438101, guid: ef355d813fd64a94d9c44219590c67e9,
+    type: 3}
   attack_Point: {fileID: 1331364019}
+  attack_Timer: 0.35

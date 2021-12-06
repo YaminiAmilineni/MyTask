@@ -38,7 +38,7 @@ public class EnemyScript : MonoBehaviour
 
         if (canShoot)
         {
-            Invoke("StartShooting", Random.Range(1f, 3f));
+            Invoke("StartShooting", Random.Range(1f, -3f));
         }
     }
 
@@ -80,6 +80,27 @@ public class EnemyScript : MonoBehaviour
         {
             Invoke("StartShooting", Random.Range(1f, 3f));
         }
+    }
+
+    void TurnOffGameObject()
+    {
+        gameObject.SetActive(false);
+    }
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if(target.tag == "Bullet")
+        {
+            canMove = false;
+
+            if(canShoot)
+            {
+                canShoot = false;
+                CancelInvoke("StartShooting");
+            }
+        }
+
+        Invoke("TurnOffGameObject", 3f);
+        anim.Play("Destroy");
     }
 
 
