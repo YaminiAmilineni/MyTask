@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
     private float current_Attack_Timer;
     private bool canAttack;
 
+    //private Animator animate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,10 +69,31 @@ public class PlayerControl : MonoBehaviour
         //        canAttack = false;
         //        attack_Timer = 0f;
 
-              Instantiate(player_Bullet, attack_Point.position, Quaternion.identity);
-       
-            
+        Instantiate(player_Bullet, attack_Point.position, Quaternion.identity);
+
+
         //    }
         //}
     }
+
+    //void OnTriggerEnter2D(Collider2D target)
+    //{
+
+    //    if (target.tag == "Enemy")
+    //    {
+
+    //        animate.Play("Playercollapse");
+
+    //        //if (canShoot)
+    //        //{
+    //        //    canShoot = false;
+    //        //    CancelInvoke("StartShooting");
+    //        //}
+
+    //    }
+
+    //    Invoke("TurnOffGameObject", 3f);
+        
+
+    
 }

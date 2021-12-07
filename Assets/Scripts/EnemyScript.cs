@@ -88,12 +88,13 @@ public class EnemyScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D target)
     {
+
         if(target.tag == "Bullet")
         {
            
             canMove = false;
-
-            if(canShoot)
+           
+            if (canShoot)
             {
                 canShoot = false;
                 CancelInvoke("StartShooting");
@@ -103,6 +104,7 @@ public class EnemyScript : MonoBehaviour
 
         Invoke("TurnOffGameObject", 3f);
         anim.Play("Destroy");
+        ScoreScript.scorevalue += 1;
     }
 
 

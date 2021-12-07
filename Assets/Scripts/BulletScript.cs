@@ -33,18 +33,22 @@ public class BulletScript : MonoBehaviour
         temp.y += speed * Time.deltaTime;
         transform.position = temp;
     }
-    void DeactivateGameObject()
-    {
-        gameObject.SetActive(false);
-        //Destroy(gameObject);
-    }
+    //void DeactivateGameObject()
+    //{
+    //    gameObject.SetActive(false);
+    //    //Destroy(gameObject);
+    //}
 
     void OnTriggerEnter2D(Collider2D target)
     {
         if(target.tag == "Bullet" || target.tag == "Enemy")
         {
+           // ScoreScript.scorevalue += 1;
            // Destroy(gameObject);
             gameObject.SetActive(false);
+
         }
+        if (target.tag == "Enemy")
+            ScoreScript.scorevalue += 1;
     }
 }

@@ -11,12 +11,12 @@ public class ScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // score= 
+        score = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        score.text = "Score:" + scorevalue;
     }
 }
