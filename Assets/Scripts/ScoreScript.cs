@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreScript : MonoBehaviour
 {
@@ -18,5 +19,13 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         score.text = "Score:" + scorevalue;
+        if (scorevalue == 90)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
+   
+   
+
+
 }
