@@ -5,13 +5,13 @@ using UnityEngine;
 public class BGScroll : MonoBehaviour
 {
     public float scroll_Speed = 0.1f;
-    private MeshRenderer Renderer;
-    private float x_Scroll;
+    private MeshRenderer mesh_Renderer;
+    private float y_Scroll;
 
     
     void Awake()
     {
-        Renderer = GetComponent<MeshRenderer>();
+        mesh_Renderer = GetComponent<MeshRenderer>();
     }
 
    
@@ -21,8 +21,8 @@ public class BGScroll : MonoBehaviour
     }
     void Scroll()
     {
-        x_Scroll = Time.time * scroll_Speed;
-        Vector2 offset = new Vector2(x_Scroll, 0f);
-        Renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
+        y_Scroll = Time.time * scroll_Speed;
+        Vector2 offset = new Vector2(y_Scroll, 0f);
+        mesh_Renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
     }
 }

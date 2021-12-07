@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public float min_Y = -4.3f, max_Y = 4.3f;
+    public float min_Y = -6.8f, max_Y = 3f;
     public GameObject[] asteroid_Prefabs;
     public GameObject enemyPrefab;
 
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            Instantiate(enemyPrefab, temp, Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(enemyPrefab, temp, Quaternion.Euler(0f, 0f, 180f));
         }
 
         Invoke("SpawnEnemies", timer);

@@ -5,9 +5,12 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public float speed = 5f;
-    public float min_Y, max_Y;
+    public float min_X, max_X;
 
-    public GameObject Player_Bullet;
+    [SerializeField]
+    private GameObject player_Bullet;
+
+    [SerializeField]
     public Transform attack_Point;
 
 
@@ -18,50 +21,56 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        current_Attack_Timer = attack_Timer;
+        InvokeRepeating("Attack", 0f, 0.1f);
+        //current_Attack_Timer = attack_Timer;
     }
 
     // Update is called once per frame
     void Update()
     {
         MovePlayer();
-        Attack();
+        //Attack();
     }
     void MovePlayer()
     {
-        if (Input.GetAxisRaw("Vertical") > 0f)
+        if (Input.GetAxisRaw("Horizontal") > 0f)
         {
             Vector3 temp = transform.position;
-            temp.y += speed * Time.deltaTime;
-            if (temp.y > max_Y)
-                temp.y = max_Y;
+            temp.x += speed * Time.deltaTime;
+
+            if (temp.x > max_X)
+                temp.x = max_X;
             transform.position = temp;
         }
-        else if (Input.GetAxisRaw("Vertical") < 0f)
+        else if (Input.GetAxisRaw("Horizontal") < 0f)
         {
             Vector3 temp = transform.position;
-            temp.y -= speed * Time.deltaTime;
-            if (temp.y < min_Y)
-                temp.y = min_Y;
+            temp.x -= speed * Time.deltaTime;
+
+            if (temp.x < min_X)
+                temp.x = min_X;
             transform.position = temp;
 
         }
     }
     void Attack()
     {
-        attack_Timer += Time.deltaTime;
-        if (attack_Timer > current_Attack_Timer)
-        {
-            canAttack = true;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (canAttack)
-            {
-                canAttack = false;
-                attack_Timer = 0f;
-                Instantiate(Player_Bullet, attack_Point.position, Quaternion.identity);
-            }
-        }
+        //attack_Timer += Time.deltaTime;
+        //if (attack_Timer > current_Attack_Timer)
+        //{
+        //    canAttack = true;
+        //} 
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    if (canAttack)
+        //    {
+        //        canAttack = false;
+        //        attack_Timer = 0f;
+
+              Instantiate(player_Bullet, attack_Point.position, Quaternion.identity);
+       
+            
+        //    }
+        //}
     }
 }

@@ -12,7 +12,7 @@ public class EnemyScript : MonoBehaviour
     public bool canRotate;
     private bool canMove = true;
 
-    public float bound_X = -11f;
+    public float bound_Y = -11f;
     public Transform attack_Point;
     public GameObject Enemy_bullet;
 
@@ -36,10 +36,10 @@ public class EnemyScript : MonoBehaviour
             }
         }
 
-        if (canShoot)
-        {
-            Invoke("StartShooting", Random.Range(1f, -3f));
-        }
+        //if (canShoot)
+        //{
+        //    Invoke("StartShooting", Random.Range(1f, -3f));
+        //}
     }
 
     // Update is called once per frame
@@ -53,10 +53,10 @@ public class EnemyScript : MonoBehaviour
         if(canMove)
         {
             Vector3 temp = transform.position;
-            temp.x -= speed * Time.deltaTime;
+            temp.y -= speed * Time.deltaTime;
             transform.position = temp;
 
-            if (temp.x < bound_X)
+            if (temp.y < bound_Y)
                 gameObject.SetActive(false);
 
         }
@@ -90,13 +90,15 @@ public class EnemyScript : MonoBehaviour
     {
         if(target.tag == "Bullet")
         {
+           
             canMove = false;
 
             if(canShoot)
             {
                 canShoot = false;
                 CancelInvoke("StartShooting");
-            }
+            } 
+           
         }
 
         Invoke("TurnOffGameObject", 3f);

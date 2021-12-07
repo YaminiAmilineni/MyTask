@@ -30,18 +30,20 @@ public class BulletScript : MonoBehaviour
     void Move()
     {
         Vector3 temp = transform.position;
-        temp.x += speed * Time.deltaTime;
+        temp.y += speed * Time.deltaTime;
         transform.position = temp;
     }
     void DeactivateGameObject()
     {
         gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D target)
     {
         if(target.tag == "Bullet" || target.tag == "Enemy")
         {
+           // Destroy(gameObject);
             gameObject.SetActive(false);
         }
     }
