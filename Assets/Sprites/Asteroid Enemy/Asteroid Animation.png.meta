@@ -368,8 +368,8 @@ TextureImporter:
       name: Asteroid Animation_12
       rect:
         serializedVersion: 2
-        x: 674
-        y: 26
+        x: 666
+        y: 383
         width: 250
         height: 263
       alignment: 0
